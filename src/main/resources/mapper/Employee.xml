@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.reggie.mapper.EmployeeMapper">
+    <resultMap id="BaseMap" type="com.itheima.reggie.entity.Employee"
+        autoMapping="true">
+        <id property="id" jdbcType="BIGINT" column="id"/>
+    </resultMap>
+    <select id="getLoginUser" parameterType="java.lang.String" resultMap="BaseMap">
+        select * from employee as emp where emp.username = #{username,jdbcType=VARCHAR}
+    </select>
+</mapper>
